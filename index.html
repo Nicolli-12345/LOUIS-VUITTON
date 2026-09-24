@@ -1,1 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>LOUIS VUITTON | Sistema Gerencial</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        LOUIS VUITTON
+        <span>SISTEMA GERENCIAL</span>
+    </div>
+
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#vendas">Vendas</a>
+        <a href="#clientes">Clientes</a>
+    </nav>
+</header>
+
+<main>
+
+<section id="inicio" class="hero">
+    <div>
+        <p class="dourado">LUXURY • ELEGANCE • STYLE</p>
+
+        <h1>LOUIS VUITTON</h1>
+
+        <p>
+            Sistema de Informação Gerencial
+            para controle de produtos, vendas,
+            clientes e estoque.
+        </p>
+
+        <a href="#produtos" class="botao">VER PRODUTOS</a>
+    </div>
+</section>
+
+
+<!-- INDICADORES -->
+
+<section class="cards">
+
+    <div class="card">
+        <span>💰</span>
+        <p>Faturamento</p>
+        <strong id="faturamento">R$ 0,00</strong>
+    </div>
+
+    <div class="card">
+        <span>🛍️</span>
+        <p>Vendas</p>
+        <strong id="totalVendas">0</strong>
+    </div>
+
+    <div class="card">
+        <span>📊</span>
+        <p>Ticket Médio</p>
+        <strong id="ticketMedio">R$ 0,00</strong>
+    </div>
+
+    <div class="card">
+        <span>📦</span>
+        <p>Estoque</p>
+        <strong id="estoque">0</strong>
+    </div>
+
+</section>
+
+
+<!-- CATEGORIAS -->
+
+<section class="categorias">
+
+    <h2>Nossa Coleção</h2>
+
+    <div class="categoria-grid">
+
+        <div class="categoria">
+            <div class="produto-img">👠</div>
+            <h3>Saltos</h3>
+        </div>
+
+        <div class="categoria">
+            <div class="produto-img">👜</div>
+            <h3>Bolsas</h3>
+        </div>
+
+        <div class="categoria">
+            <div class="produto-img">👛</div>
+            <h3>Carteiras</h3>
+        </div>
+
+        <div class="categoria">
+            <div class="produto-img">👟</div>
+            <h3>Tênis</h3>
+        </div>
+
+        <div class="categoria">
+            <div class="produto-img">📿</div>
+            <h3>Colares</h3>
+        </div>
+
+        <div class="categoria">
+            <div class="produto-img">💎</div>
+            <h3>Brincos</h3>
+        </div>
+
+        <div class="categoria">
+            <div class="produto-img">✨</div>
+            <h3>Pulseiras</h3>
+        </div>
+
+        <div class="categoria">
+            <div class="produto-img">🧣</div>
+            <h3>Lenços</h3>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRODUTOS -->
+
+<section id="produtos" class="box">
+
+    <h2>Cadastro de Produtos</h2>
+
+    <p class="subtitulo">
+        Adicione e gerencie os produtos da loja.
+    </p>
+
+    <form id="produtoForm">
+
+        <input
+            type="text"
+            id="produtoNome"
+            placeholder="Nome do produto"
+            required>
+
+        <select id="categoria" required>
+
+            <option value="">Categoria</option>
+            <option>Saltos</option>
+            <option>Bolsas</option>
+            <option>Carteiras</option>
+            <option>Tênis</option>
+            <option>Colares</option>
+            <option>Brincos</option>
+            <option>Pulseiras</option>
+            <option>Lenços</option>
+
+        </select>
+
+        <input
+            type="number"
+            id="preco"
+            placeholder="Preço"
+            required>
+
+        <input
+            type="number"
+            id="quantidade"
+            placeholder="Estoque"
+            required>
+
+        <button type="submit">
+            + Cadastrar
+        </button>
+
+    </form>
+
+
+    <div class="tabela-container">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Categoria</th>
+                    <th>Preço</th>
+                    <th>Estoque</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+
+            <tbody id="listaProdutos"></tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- VENDAS -->
+
+<section id="vendas" class="box">
+
+    <h2>Registrar Venda</h2>
+
+    <form id="vendaForm">
+
+        <select id="produtoVenda" required>
+            <option value="">Escolha o produto</option>
+        </select>
+
+        <input
+            type="number"
+            id="qtdVenda"
+            placeholder="Quantidade"
+            min="1"
+            required>
+
+        <select id="pagamento" required>
+
+            <option value="">Forma de pagamento</option>
+            <option>Pix</option>
+            <option>Cartão</option>
+            <option>Dinheiro</option>
+
+        </select>
+
+        <button type="submit">
+            Registrar Venda
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- CLIENTES -->
+
+<section id="clientes" class="box">
+
+    <h2>Cadastro de Clientes</h2>
+
+    <form id="clienteForm">
+
+        <input
+            type="text"
+            id="clienteNome"
+            placeholder="Nome"
+            required>
+
+        <input
+            type="email"
+            id="clienteEmail"
+            placeholder="E-mail"
+            required>
+
+        <input
+            type="text"
+            id="clienteCidade"
+            placeholder="Cidade"
+            required>
+
+        <button type="submit">
+            Cadastrar Cliente
+        </button>
+
+    </form>
+
+    <div id="mensagem"></div>
+
+</section>
+
+
+<!-- INDICADORES -->
+
+<section class="box indicadores">
+
+    <h2>Indicadores Gerenciais</h2>
+
+    <div class="indicador">
+        <span>🏆 Produto mais vendido</span>
+        <strong id="maisVendido">-</strong>
+    </div>
+
+    <div class="indicador">
+        <span>💳 Pagamento mais utilizado</span>
+        <strong id="pagamentoMaisUsado">-</strong>
+    </div>
+
+    <div class="indicador">
+        <span>⚠️ Estoque baixo</span>
+        <strong id="estoqueBaixo">-</strong>
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <h2>LOUIS VUITTON</h2>
+
+    <p>
+        Sistema de Informação Gerencial
+    </p>
+
+    <small>
+        Projeto acadêmico • 2026
+    </small>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
